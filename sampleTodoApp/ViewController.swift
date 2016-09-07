@@ -49,8 +49,9 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
         
-        
-        cell.textLabel!.text = "\(todoArray[indexPath.row]["dueDate"]! as String)までに\(todoArray[indexPath.row]["todoText"]! as String)"
+        if todoArray[0].count != 0{
+            cell.textLabel!.text = "\(todoArray[indexPath.row]["dueDate"]! as String)までに\(todoArray[indexPath.row]["todoText"]! as String)"
+        }
         return cell
         
     }
