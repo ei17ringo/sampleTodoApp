@@ -52,6 +52,10 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="B0S-AM-Xwg" appends="YES" id="BTX-jw-5jQ"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -61,6 +65,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="B0S-AM-Xwg">
+                    <connections>
+                        <action selector="swipeDown:" destination="BYZ-38-t0r" id="kiy-U6-tnb"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="fFe-gL-moa"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="440" y="387"/>
         </scene>

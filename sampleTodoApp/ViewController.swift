@@ -34,6 +34,10 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
         //Notification設定
         setNotification()
+        
+        //TableViewに追加したデータを再設定
+        read()
+        todoList.reloadData()
     }
     
     // 行数
@@ -153,6 +157,19 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
         
 
     
+    }
+
+    @IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
+        todoText.resignFirstResponder()
+    }
+    
+    //GestureRecognizerのdelegateをselfに設定して使用する
+    func gestureRecognizer(
+        gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWithGestureRecognizer
+        otherGestureRecognizer: UIGestureRecognizer
+        ) -> Bool {
+        return true
     }
 
     override func didReceiveMemoryWarning() {
